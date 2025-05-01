@@ -4,12 +4,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dia Internacional da Namorada</title>
   <style>
+    * {
+      box-sizing: border-box;
+    }
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color: #fff7fb;
       color: #4d2c3d;
       text-align: center;
       padding: 20px;
+      margin: 0;
     }
     h1 {
       font-size: 2em;
@@ -24,7 +28,8 @@
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
     .image-section img {
-      max-width: 100%;
+      width: 100%;
+      max-width: 300px;
       border-radius: 15px;
     }
     .section {
@@ -32,7 +37,7 @@
     }
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
       gap: 15px;
       max-width: 900px;
       margin: 0 auto;
@@ -42,11 +47,26 @@
       padding: 15px;
       border-radius: 10px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      font-size: 0.95em;
     }
     .caption {
       font-size: 0.9em;
       color: #7b4a62;
       margin-top: 5px;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.5em;
+      }
+      .grid-item {
+        font-size: 0.9em;
+        padding: 10px;
+      }
     }
   </style>
 </head>
