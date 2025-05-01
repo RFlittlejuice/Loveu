@@ -2,62 +2,76 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dia Internacional da Namorada</title>
+  <title>Para o Amor da Minha Vida</title>
   <style>
     * {
       box-sizing: border-box;
     }
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #fff7fb;
+      background: linear-gradient(to bottom right, #ffe4ec, #fff7fb);
       color: #4d2c3d;
-      text-align: center;
-      padding: 20px;
       margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+    header {
+      padding: 30px 20px;
     }
     h1 {
       font-size: 2em;
-      margin-bottom: 10px;
+      margin: 0;
     }
-    .note {
-      background-color: #ffe0f0;
-      padding: 10px;
-      margin: 10px auto;
-      max-width: 500px;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    .note, .section {
+      background-color: #ffffffcc;
+      margin: 20px auto;
+      padding: 20px;
+      max-width: 600px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
     .image-section img {
       width: 100%;
       max-width: 300px;
-      border-radius: 15px;
-    }
-    .section {
-      margin: 30px 0;
+      border-radius: 20px;
+      margin: 10px 0;
     }
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
       gap: 15px;
-      max-width: 900px;
-      margin: 0 auto;
+      margin-top: 20px;
     }
     .grid-item {
       background: #fff0f6;
       padding: 15px;
       border-radius: 10px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
       font-size: 0.95em;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
     .caption {
       font-size: 0.9em;
-      color: #7b4a62;
       margin-top: 5px;
+      color: #7b4a62;
     }
-    img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 10px;
+    .music-player iframe {
+      border-radius: 12px;
+      margin-top: 10px;
+    }
+    .counter {
+      font-size: 1.2em;
+      margin-top: 10px;
+    }
+    .button-share {
+      margin-top: 20px;
+    }
+    .button-share a {
+      background: #ff80ab;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 20px;
+      text-decoration: none;
+      display: inline-block;
     }
     @media (max-width: 480px) {
       h1 {
@@ -65,51 +79,66 @@
       }
       .grid-item {
         font-size: 0.9em;
-        padding: 10px;
       }
     }
   </style>
+  <script>
+    function atualizarContador() {
+      const dataInicio = new Date('2022-07-01');
+      const hoje = new Date();
+      const diffTempo = hoje - dataInicio;
+      const dias = Math.floor(diffTempo / (1000 * 60 * 60 * 24));
+      document.getElementById("contador").innerText = `Estamos juntos há ${dias} dias!`;
+    }
+    window.onload = atualizarContador;
+  </script>
 </head>
 <body>
-  <h1>Dia Internacional da Namorada</h1>
-  <div class="note">
-    <p><strong>Para:</strong> a namorada mais linda ♡<br>
-    <strong>De:</strong> seu namorado apaixonado ♡</p>
-  </div>
-  <div class="image-section">
+  <header>
+    <h1>Para o Amor da Minha Vida</h1>
+  </header>  <div class="note">
+    <p><strong>Para:</strong> minha princesa linda ♡<br>
+    <strong>De:</strong> seu eterno apaixonado ♡</p>
+  </div>  <div class="image-section">
     <img src="https://via.placeholder.com/300x400" alt="Foto da namorada">
   </div>  <div class="section">
     <h2>Coisas que eu amo em você</h2>
     <div class="grid">
-      <div class="grid-item">Você é tão gentil. Com tudo e com todos.</div>
-      <div class="grid-item">Você é tão talentosa. É normal ser tão perfeita assim?</div>
-      <div class="grid-item">Você é trabalhadora. Constrói o mundo dos seus sonhos.</div>
-      <div class="grid-item">Seu sorriso é o mais fofo! Ilumina meu dia.</div>
-      <div class="grid-item">Você sabe me confortar. Seus abraços significam tudo!</div>
-      <div class="grid-item">Você torna cada dia mais brilhante.</div>
-      <div class="grid-item">Você é muito inteligente. Amo seu jeito de ver o mundo.</div>
-      <div class="grid-item">Você é linda. (Fato!)</div>
-      <div class="grid-item">Você torna o mundo um lugar melhor.</div>
-      <div class="grid-item">Você é tão paciente. Como consegue?</div>
-      <div class="grid-item">Você ama a natureza. Adoro nossos passeios.</div>
-      <div class="grid-item">Você tem um ótimo gosto. Melhores filmes, músicas e roupas!</div>
+      <div class="grid-item">Seu coração é puro e bondoso.</div>
+      <div class="grid-item">Você me inspira todos os dias.</div>
+      <div class="grid-item">Seu sorriso é meu lugar favorito.</div>
+      <div class="grid-item">Você é meu porto seguro.</div>
+      <div class="grid-item">Seu carinho muda tudo.</div>
+      <div class="grid-item">Você é linda por dentro e por fora.</div>
+      <div class="grid-item">Sua risada é a melhor música.</div>
+      <div class="grid-item">Você é única. Incomparável.</div>
     </div>
   </div>  <div class="section">
-    <h2>Momentos favoritos juntos</h2>
+    <h2>Momentos Inesquecíveis</h2>
     <div class="grid">
       <div class="grid-item">
-        <img src="https://via.placeholder.com/200x200" alt="Primeiro Encontro">
-        <div class="caption">Primeiro Encontro</div>
+        <img src="https://via.placeholder.com/200x200" alt="Encontro especial">
+        <div class="caption">Nosso primeiro encontro</div>
       </div>
       <div class="grid-item">
-        <img src="https://via.placeholder.com/200x200" alt="Formatura">
-        <div class="caption">Sua Formatura</div>
+        <img src="https://via.placeholder.com/200x200" alt="Aniversário dela">
+        <div class="caption">Seu aniversário</div>
       </div>
       <div class="grid-item">
-        <img src="https://via.placeholder.com/200x200" alt="Café da Manhã">
-        <div class="caption">Nossos Cafés da Manhã</div>
+        <img src="https://via.placeholder.com/200x200" alt="Passeio no parque">
+        <div class="caption">Nosso passeio no parque</div>
       </div>
     </div>
+  </div>  <div class="section">
+    <h2>Nossa Trilha Sonora</h2>
+    <div class="music-player">
+      <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/37i9dQZF1DX7KNKjOK0o75?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    </div>
+  </div>  <div class="section">
+    <h2>Nosso Amor em Números</h2>
+    <div id="contador" class="counter">Calculando...</div>
+  </div>  <div class="button-share">
+    <a href="https://wa.me/?text=Olha%20esse%20site%20lindo%20que%20fiz%20pra%20você!" target="_blank">Compartilhar no WhatsApp</a>
   </div>
 </body>
 </html>
