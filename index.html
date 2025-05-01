@@ -1,79 +1,95 @@
-
-<!DOCTYPE html>
-<html lang="pt-BR">
+<!DOCTYPE html><html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dia Internacional da Namorada</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #fdfdfd;
-      color: #333;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #fff7fb;
+      color: #4d2c3d;
       text-align: center;
-    }
-    header {
-      background-color: #ffdde1;
       padding: 20px;
     }
     h1 {
-      margin: 0;
-      color: #ff5895;
-      font-size: 2rem;
+      font-size: 2em;
+      margin-bottom: 10px;
+    }
+    .note {
+      background-color: #ffe0f0;
+      padding: 10px;
+      margin: 10px auto;
+      max-width: 500px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .image-section img {
+      max-width: 100%;
+      border-radius: 15px;
     }
     .section {
-      margin: 20px 0;
-      padding: 20px;
+      margin: 30px 0;
     }
-    .card {
-      display: inline-block;
-      border: 2px solid #ff5895;
-      padding: 10px;
-      margin: 10px;
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 15px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .grid-item {
+      background: #fff0f6;
+      padding: 15px;
       border-radius: 10px;
-      background-color: #ffe6eb;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
-    .quote {
-      font-style: italic;
-      color: #7c3b57;
-    }
-    footer {
-      margin-top: 20px;
-      background-color: #ffdde1;
-      padding: 10px;
+    .caption {
+      font-size: 0.9em;
+      color: #7b4a62;
+      margin-top: 5px;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Dia Internacional da Namorada</h1>
-    <p>Para a melhor namorada do mundo ♥</p>
-  </header>
-
-  <section class="section">
+  <h1>Dia Internacional da Namorada</h1>
+  <div class="note">
+    <p><strong>Para:</strong> a namorada mais linda ♡<br>
+    <strong>De:</strong> seu namorado apaixonado ♡</p>
+  </div>
+  <div class="image-section">
+    <img src="https://via.placeholder.com/300x400" alt="Foto da namorada">
+  </div>  <div class="section">
     <h2>Coisas que eu amo em você</h2>
-    <div class="card">Você é tão gentil com todos.</div>
-    <div class="card">Seu sorriso ilumina meu dia!</div>
-    <div class="card">Você torna cada momento especial.</div>
-    <div class="card">Seu gosto por música e filmes é incrível!</div>
-  </section>
-
-  <section class="section">
-    <h2>Momentos Favoritos Juntos</h2>
-    <div class="card">Primeiro encontro</div>
-    <div class="card">Sua graduação</div>
-    <div class="card">Nossas caminhadas na natureza</div>
-  </section>
-
-  <section class="section">
-    <h2>Minha Mensagem para Você</h2>
-    <p class="quote">"Eu sempre procurarei por você, meu anjo, e faria o impossível para te encontrar."</p>
-  </section>
-
-  <footer>
-    <p>Com amor, seu namorado ♥</p>
-  </footer>
+    <div class="grid">
+      <div class="grid-item">Você é tão gentil. Com tudo e com todos.</div>
+      <div class="grid-item">Você é tão talentosa. É normal ser tão perfeita assim?</div>
+      <div class="grid-item">Você é trabalhadora. Constrói o mundo dos seus sonhos.</div>
+      <div class="grid-item">Seu sorriso é o mais fofo! Ilumina meu dia.</div>
+      <div class="grid-item">Você sabe me confortar. Seus abraços significam tudo!</div>
+      <div class="grid-item">Você torna cada dia mais brilhante.</div>
+      <div class="grid-item">Você é muito inteligente. Amo seu jeito de ver o mundo.</div>
+      <div class="grid-item">Você é linda. (Fato!)</div>
+      <div class="grid-item">Você torna o mundo um lugar melhor.</div>
+      <div class="grid-item">Você é tão paciente. Como consegue?</div>
+      <div class="grid-item">Você ama a natureza. Adoro nossos passeios.</div>
+      <div class="grid-item">Você tem um ótimo gosto. Melhores filmes, músicas e roupas!</div>
+    </div>
+  </div>  <div class="section">
+    <h2>Momentos favoritos juntos</h2>
+    <div class="grid">
+      <div class="grid-item">
+        <img src="https://via.placeholder.com/200x200" alt="Primeiro Encontro">
+        <div class="caption">Primeiro Encontro</div>
+      </div>
+      <div class="grid-item">
+        <img src="https://via.placeholder.com/200x200" alt="Formatura">
+        <div class="caption">Sua Formatura</div>
+      </div>
+      <div class="grid-item">
+        <img src="https://via.placeholder.com/200x200" alt="Café da Manhã">
+        <div class="caption">Nossos Cafés da Manhã</div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
