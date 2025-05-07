@@ -14,15 +14,15 @@
 
         /* Cor de fundo e fonte */
         body {
-            background-color: #fce4ec;
+            background-color: #000;
             font-family: 'Arial', sans-serif;
-            color: #333;
+            color: #fff;
             text-align: center;
         }
 
         /* Cabeçalho */
         header {
-            background-color: #f48fb1;
+            background-color: #d32f2f; /* Vermelho intenso */
             padding: 20px;
             color: white;
         }
@@ -39,7 +39,7 @@
         /* Seção de mensagem */
         .message {
             padding: 30px;
-            background-color: #f1c6d9;
+            background-color: #b71c1c; /* Vermelho mais escuro */
             margin-top: 20px;
         }
 
@@ -62,7 +62,7 @@
 
         /* Contador de tempo */
         .countdown {
-            background-color: #f48fb1;
+            background-color: #d32f2f; /* Vermelho intenso */
             color: white;
             padding: 20px;
             margin-top: 30px;
@@ -72,7 +72,7 @@
         /* Rodapé */
         footer {
             margin-top: 30px;
-            background-color: #f1c6d9;
+            background-color: #b71c1c; /* Vermelho mais escuro */
             padding: 10px;
             font-size: 1em;
         }
@@ -94,7 +94,7 @@
     </section>
 
     <section class="countdown">
-        <h2>Nosso próximo encontro</h2>
+        <h2>Tempo que estamos juntos</h2>
         <div id="timer"></div>
     </section>
 
@@ -103,14 +103,14 @@
     </footer>
 
     <script>
-        // Função para exibir o countdown
+        // Função para exibir o countdown (tempo desde o início do relacionamento)
         function updateTimer() {
-            const eventDate = new Date('2025-06-12T00:00:00'); // Data do próximo Dia dos Namorados
+            const startDate = new Date('2025-02-09T00:00:00'); // Data do início do relacionamento
             const currentDate = new Date();
-            const timeDifference = eventDate - currentDate;
+            const timeDifference = currentDate - startDate;
 
-            if (timeDifference <= 0) {
-                document.getElementById('timer').innerText = "Hoje é o Dia dos Namorados!";
+            if (timeDifference < 0) {
+                document.getElementById('timer').innerText = "Ainda não começamos a contar o tempo!";
                 return;
             }
 
@@ -119,7 +119,7 @@
             const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
             const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
 
-            document.getElementById('timer').innerText = `Faltam ${days} dias, ${hours} horas, ${minutes} minutos e ${seconds} segundos.`;
+            document.getElementById('timer').innerText = `Já se passaram ${days} dias, ${hours} horas, ${minutes} minutos e ${seconds} segundos.`;
         }
 
         // Atualizar o countdown a cada segundo
