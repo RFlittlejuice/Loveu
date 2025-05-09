@@ -1,129 +1,112 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+<!DOCTYPE html><html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dia dos Namorados - Para [Nome]</title>
-    <style>
-        /* Reset básico de estilos */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Digital Love Letter</title>
+  <style>
+    body {
+      margin: 0;
+      background: linear-gradient(to bottom, #ffdee9, #b5fffc);
+      font-family: 'Arial', sans-serif;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      position: relative;
+    }.message-box {
+  background: white;
+  border-radius: 20px;
+  padding: 30px;
+  max-width: 300px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  animation: fadeInUp 2s ease forwards;
+}
 
-        /* Cor de fundo e fonte */
-        body {
-            background-color: #000;
-            font-family: 'Arial', sans-serif;
-            color: #fff;
-            text-align: center;
-        }
+.message {
+  font-size: 1.2em;
+  color: #333;
+  opacity: 0;
+  animation: reveal 2s ease forwards;
+  animation-delay: 1s;
+}
 
-        /* Cabeçalho */
-        header {
-            background-color: #d32f2f; /* Vermelho intenso */
-            padding: 20px;
-            color: white;
-        }
+@keyframes reveal {
+  to {
+    opacity: 1;
+  }
+}
 
-        h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-        }
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
-        p {
-            font-size: 1.2em;
-        }
+.heart {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: red;
+  transform: rotate(45deg);
+  animation: float 6s linear infinite;
+}
 
-        /* Seção de mensagem */
-        .message {
-            padding: 30px;
-            background-color: #b71c1c; /* Vermelho mais escuro */
-            margin-top: 20px;
-        }
+.heart::before, .heart::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: red;
+  border-radius: 50%;
+}
 
-        h2 {
-            font-size: 2em;
-            margin-bottom: 15px;
-        }
+.heart::before {
+  top: -10px;
+  left: 0;
+}
+.heart::after {
+  left: -10px;
+  top: 0;
+}
 
-        .message p {
-            font-size: 1.3em;
-        }
+@keyframes float {
+  0% {
+    bottom: -30px;
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    bottom: 100vh;
+    opacity: 0;
+  }
+}
 
-        /* Imagem */
-        .image img {
-            max-width: 100%;
-            height: auto;
-            margin-top: 20px;
-            border-radius: 10px;
-        }
-
-        /* Contador de tempo */
-        .countdown {
-            background-color: #d32f2f; /* Vermelho intenso */
-            color: white;
-            padding: 20px;
-            margin-top: 30px;
-            font-size: 1.5em;
-        }
-
-        /* Rodapé */
-        footer {
-            margin-top: 30px;
-            background-color: #b71c1c; /* Vermelho mais escuro */
-            padding: 10px;
-            font-size: 1em;
-        }
-    </style>
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Feliz Dia dos Namorados, [Nome]!</h1>
-        <p>Esse site é todo para você, meu amor. ❤️</p>
-    </header>
+  <div class="message-box">
+    <div class="message">You're my favorite notification.</div>
+  </div>  <script>
+    // Gera corações animados aleatórios
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDuration = 4 + Math.random() * 4 + 's';
+      document.body.appendChild(heart);
 
-    <section class="message">
-        <h2>Minha mensagem para você</h2>
-        <p>Desde o momento em que nos conhecemos, meu mundo se iluminou. Cada dia com você é uma nova aventura, repleta de risos, carinho e amor. Feliz Dia dos Namorados, meu coração! 💕</p>
-    </section>
+      setTimeout(() => heart.remove(), 8000);
+    }
 
-    <section class="image">
-        <img src="https://via.placeholder.com/600x400" alt="Imagem romântica">
-    </section>
-
-    <section class="countdown">
-        <h2>Tempo que estamos juntos</h2>
-        <div id="timer"></div>
-    </section>
-
-    <footer>
-        <p>&#169; 2025 - Todos os direitos reservados</p>
-    </footer>
-
-    <script>
-        // Função para exibir o countdown (tempo desde o início do relacionamento)
-        function updateTimer() {
-            const startDate = new Date('2025-02-09T00:00:00'); // Data do início do relacionamento
-            const currentDate = new Date();
-            const timeDifference = currentDate - startDate;
-
-            if (timeDifference < 0) {
-                document.getElementById('timer').innerText = "Ainda não começamos a contar o tempo!";
-                return;
-            }
-
-            const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
-
-            document.getElementById('timer').innerText = `Já se passaram ${days} dias, ${hours} horas, ${minutes} minutos e ${seconds} segundos.`;
-        }
-
-        // Atualizar o countdown a cada segundo
-        setInterval(updateTimer, 1000);
-    </script>
-</body>
+    setInterval(createHeart, 500);
+  </script></body>
 </html>
