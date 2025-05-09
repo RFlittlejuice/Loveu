@@ -2,47 +2,71 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Digital Love Letter</title>
+  <title>Animated Love Letter</title>
   <style>
     body {
       margin: 0;
+      padding: 0;
       background: linear-gradient(to bottom, #ffdee9, #b5fffc);
-      font-family: 'Arial', sans-serif;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
       height: 100vh;
-      position: relative;
-    }.message-box {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      font-family: 'Arial', sans-serif;
+    }.envelope {
+  width: 250px;
+  height: 160px;
+  position: relative;
+  background: #fff;
+  border: 2px solid #e87ea1;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+}
+
+.flap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #e87ea1;
+  clip-path: polygon(0 0, 100% 0, 50% 50%);
+  transform-origin: top;
+  animation: openFlap 2s ease forwards;
+  z-index: 3;
+}
+
+@keyframes openFlap {
+  0% { transform: rotateX(0deg); }
+  100% { transform: rotateX(-180deg); }
+}
+
+.letter {
+  position: absolute;
+  top: 20px;
+  left: 10px;
+  width: 230px;
+  height: 120px;
   background: white;
-  border-radius: 20px;
-  padding: 30px;
-  max-width: 300px;
-  text-align: center;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-  animation: fadeInUp 2s ease forwards;
-}
-
-.message {
-  font-size: 1.2em;
-  color: #333;
+  border-radius: 10px;
+  padding: 15px;
+  box-sizing: border-box;
   opacity: 0;
-  animation: reveal 2s ease forwards;
-  animation-delay: 1s;
+  transform: translateY(20px);
+  animation: showLetter 2s ease 2s forwards;
+  z-index: 1;
 }
 
-@keyframes reveal {
-  to {
-    opacity: 1;
-  }
+.letter p {
+  margin: 0;
+  font-size: 16px;
+  color: #444;
+  text-align: center;
 }
 
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
+@keyframes showLetter {
   to {
     opacity: 1;
     transform: translateY(0);
@@ -56,6 +80,7 @@
   background: red;
   transform: rotate(45deg);
   animation: float 6s linear infinite;
+  z-index: 0;
 }
 
 .heart::before, .heart::after {
@@ -71,6 +96,7 @@
   top: -10px;
   left: 0;
 }
+
 .heart::after {
   left: -10px;
   top: 0;
@@ -93,10 +119,12 @@
   </style>
 </head>
 <body>
-  <div class="message-box">
-    <div class="message">You're my favorite notification.</div>
+  <div class="envelope">
+    <div class="flap"></div>
+    <div class="letter">
+      <p>You're my favorite notification.</p>
+    </div>
   </div>  <script>
-    // Gera corações animados aleatórios
     function createHeart() {
       const heart = document.createElement('div');
       heart.classList.add('heart');
@@ -107,6 +135,6 @@
       setTimeout(() => heart.remove(), 8000);
     }
 
-    setInterval(createHeart, 500);
+    setInterval(createHeart, 600);
   </script></body>
 </html>
